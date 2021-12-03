@@ -21,12 +21,13 @@ class Game {
     startGame(){
        document.getElementById('overlay').style.display = 'none';
        this.getRandomPhrase().addPhraseToDisplay();
+        
     }
 
 
     getRandomPhrase(){
         const randomPhrase = new Phrase(this.phrases[Math.floor(Math.random() * this.phrases.length)].phrase);
-        //new Phrase(this.phrases[Math.floor(Math.random() * this.phrases.length)]) ;
+        this.activePhrase = randomPhrase;
         return randomPhrase;
             //return a random phrase from the array of objects 
     }
